@@ -1,9 +1,8 @@
 <template>
     <div id="app">
-        <img src="./assets/logo.png">
         <h2>The list:</h2>
 
-        <select-dropdown :items="items" @select="selectItem"></select-dropdown>
+        <select-dropdown :items="items" v-model="current"></select-dropdown>
 
         <p><strong>Selected:</strong></p>
         <pre>{{ current }}</pre>
@@ -55,7 +54,7 @@
                     "Prescott Bartlett",
                     "Gavin Cortez",
                     "Martena Mccray",
-                    "Unity Butler",
+                    "Unity Butler"
                 ],
                 current: null
             }
@@ -65,12 +64,6 @@
                 return this.names.map(n => {
                     return {name: n}
                 });
-            }
-        },
-        methods: {
-            selectItem(item) {
-                console.log(item);
-                this.current = item;
             }
         }
     }
